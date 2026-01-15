@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Monkeyfuse - Creating innovative mobile applications">
-    <title>Monkeyfuse</title>
+    <meta name="description" content="Monkeyfuse - Independent software house creating innovative mobile applications">
+    <title>Monkeyfuse - Software House</title>
     <style>
         * {
             margin: 0;
@@ -18,109 +18,410 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            padding: 0;
         }
         
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Main Content */
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
             background: white;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            width: 100%;
             padding: 60px 40px;
+            margin-bottom: 40px;
+        }
+        
+        /* Hero Section */
+        .hero {
             text-align: center;
         }
         
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             color: #667eea;
             font-weight: 700;
         }
         
         .tagline {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-weight: 300;
         }
         
-        .description {
+        /* Content Sections */
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        p {
             font-size: 1.1em;
             color: #555;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
         
-        .contact {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid #eee;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
         
-        .contact a {
+        .service-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .service-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .service-card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
             color: #667eea;
             text-decoration: none;
-            font-size: 1.1em;
             font-weight: 500;
         }
         
-        .contact a:hover {
+        .footer-links a:hover {
             text-decoration: underline;
         }
         
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
+        .footer-copyright {
             color: #999;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
         
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             h1 {
-                font-size: 2.2em;
+                font-size: 2.5em;
             }
             
             .tagline {
-                font-size: 1em;
+                font-size: 1.2em;
             }
             
-            .description {
-                font-size: 1em;
+            .section {
+                padding: 40px 30px;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .services-grid,
+            .contact-info {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Monkeyfuse</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
-        <h1>Monkeyfuse</h1>
-        <p class="tagline">Creating innovative mobile applications</p>
-        <p class="description">
-            We're developing apps for iOS and other platforms. Stay tuned for exciting releases coming soon.
-        </p>
-        <div class="contact">
-            <p>Contact us:</p>
-            <p><a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a></p>
-        </div>
-        <div class="footer">
-            <p><a href="privacy.html">Privacy Policy</a></p>
-        </div>
+        <!-- Hero Section -->
+        <section class="section hero">
+            <h1>Monkeyfuse</h1>
+            <p class="tagline">Building our own innovative mobile applications</p>
+            <p class="description">
+                We're an independent software house focused on creating and launching our own 
+                mobile applications. We build products we believe in, bringing fresh ideas to life 
+                through thoughtful design and solid engineering.
+            </p>
+            <p class="description" style="margin-top: 20px; font-weight: 500; color: #667eea;">
+                Our first app, MasterMeals, is coming soon to the App Store.
+            </p>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="section">
+            <h2>About Us</h2>
+            <p>
+                Monkeyfuse is an independent software house dedicated to creating innovative 
+                mobile applications. We're not an agency - we build and launch our own products, 
+                focusing on apps that solve real problems and delight users.
+            </p>
+            <p>
+                Founded with a passion for mobile technology and product development, Monkeyfuse 
+                operates from the United Kingdom, bringing fresh perspectives to the app ecosystem. 
+                We take ideas from concept to launch, handling everything from design and development 
+                to marketing and ongoing support. Every app we create reflects our commitment 
+                to quality and user experience.
+            </p>
+            <p>
+                As a product-focused company, we have the freedom to experiment, iterate, and 
+                build exactly what we envision. We're constantly exploring new ideas and working 
+                on exciting projects that push the boundaries of what mobile apps can do.
+            </p>
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to create mobile applications that genuinely improve people's lives. 
+                We believe in building products that are not only functional and beautiful, but also 
+                intuitive and accessible. By focusing on our own products rather than client work, 
+                we can ensure that every decision prioritizes user value over short-term gains.
+            </p>
+            <h3>Our Values</h3>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8;">
+                <li><strong>User-Centric Design:</strong> Every feature we build starts with understanding user needs and pain points.</li>
+                <li><strong>Quality Over Quantity:</strong> We'd rather build one exceptional app than ten mediocre ones.</li>
+                <li><strong>Privacy First:</strong> We respect user privacy and only collect data that's essential for functionality.</li>
+                <li><strong>Continuous Improvement:</strong> We iterate based on feedback and constantly refine our products.</li>
+                <li><strong>Transparency:</strong> We're open about our practices, data collection, and how we operate.</li>
+            </ul>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="section">
+            <h2>What We Do</h2>
+            <p>
+                As a software house, we focus on building and launching our own mobile applications. 
+                Our end-to-end approach ensures that every aspect of our products meets our high standards 
+                for quality, usability, and innovation.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Product Development</h4>
+                    <p>We create native iOS applications from the ground up, using Swift and SwiftUI 
+                    to build fast, beautiful, and reliable apps. Our development process emphasizes 
+                    clean code, robust architecture, and thorough testing to ensure stability and 
+                    maintainability.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Product Design</h4>
+                    <p>Every app we build features thoughtful, user-centered design that makes 
+                    complex tasks simple and enjoyable. We follow Apple's Human Interface Guidelines 
+                    while adding our own creative touches that make our apps stand out.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Product Launch</h4>
+                    <p>We handle the entire launch process, from App Store optimization to 
+                    marketing, ensuring our apps reach the right audience. This includes App Store 
+                    listing optimization, beta testing, and strategic marketing to maximize visibility.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Ongoing Support</h4>
+                    <p>We continuously improve our apps based on user feedback, adding new 
+                    features and ensuring everything runs smoothly. Our commitment extends beyond 
+                    launch, with regular updates, bug fixes, and feature enhancements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Products Section -->
+        <section class="section">
+            <h2>Our Products</h2>
+            <h3>MasterMeals</h3>
+            <p>
+                MasterMeals is our first mobile application, currently in development and coming soon 
+                to the App Store. MasterMeals is designed to help users organize their recipes, plan 
+                meals, and create shopping lists effortlessly.
+            </p>
+            <p>
+                With MasterMeals, users can:
+            </p>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-bottom: 20px;">
+                <li>Save and organize their favorite recipes in one place</li>
+                <li>Import recipes from websites with a single tap</li>
+                <li>Plan weekly meals and generate shopping lists automatically</li>
+                <li>Modify recipes using AI-powered suggestions</li>
+                <li>Access their recipes and meal plans across all their devices</li>
+            </ul>
+            <p>
+                MasterMeals is built with privacy in mind. We don't use analytics, tracking, or 
+                advertising services. Your recipe data belongs to you, and we only collect what's 
+                necessary to provide the core functionality of the app.
+            </p>
+            <p style="font-weight: 500; color: #667eea; margin-top: 20px;">
+                MasterMeals will be available on the App Store soon. Stay tuned for updates!
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <h2>Get in Touch</h2>
+            <p>
+                Have questions about our apps or want to share feedback? We'd love to hear from you. 
+                Get in touch using the information below, or visit our <a href="contact.html" style="color: #667eea;">contact page</a> for more details.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Address</strong>
+                    <span>71 Scotton Street<br>Ashford, Kent TN25 5BW<br>United Kingdom</span>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="copyright-year"></span> Monkeyfuse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
-
