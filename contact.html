@@ -1,342 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Monkeyfuse - Get in touch with our software house team">
-    <title>Contact Us - Monkeyfuse</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 0;
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #667eea;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
-            margin-bottom: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #667eea;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #555;
-            font-weight: 600;
-        }
-        
-        p {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .contact-card {
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .contact-card h3 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #667eea;
-        }
-        
-        .contact-card p {
-            margin-bottom: 10px;
-            color: #666;
-        }
-        
-        .contact-card a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            margin-top: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            background: #667eea;
-            color: white;
-            padding: 14px 40px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #5568d3;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            margin-top: 60px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-copyright {
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .section {
-                padding: 40px 30px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Monkeyfuse</title>
+    <meta name="description" content="Get in touch with Monkeyfuse. Email hello@monkeyfuse.com for support, feedback, or privacy and data requests.">
+    <link rel="canonical" href="https://monkeyfuse.com/contact.html">
+
+    <meta name="theme-color" content="#fcfcfd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1014" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Monkeyfuse">
+    <meta property="og:url" content="https://monkeyfuse.com/contact.html">
+    <meta property="og:title" content="Contact — Monkeyfuse">
+    <meta property="og:description" content="Email hello@monkeyfuse.com for support, feedback, or privacy and data requests.">
+    <meta property="og:image" content="https://monkeyfuse.com/assets/img/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Monkeyfuse</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap site-header__inner">
+            <a class="wordmark" href="/">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                    <rect width="32" height="32" rx="7" fill="#2b5ce6"/>
+                    <path d="M9 22.5V9.5l7 6.5 7-6.5v13" fill="none" stroke="#fff"
+                          stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Monkeyfuse
+            </a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/index.html#mastermeals">Work</a></li>
+                    <li><a href="/index.html#about">About</a></li>
+                    <li><a href="/contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <section class="section">
-            <h1>Contact Us</h1>
-            <p>
-                We're here to help! Whether you have questions about our apps, want to share feedback, 
-                or just want to say hello, we'd love to hear from you.
+    <main id="main">
+        <section class="wrap hero">
+            <span class="eyebrow">Contact</span>
+            <h1>Get in touch.</h1>
+            <p class="lede">
+                Questions about our apps, feedback, a bug to report, or just to say hello —
+                we'd like to hear from you.
             </p>
-
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Email</h3>
-                    <p><a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a></p>
-                    <p>We typically respond within 24-48 hours.</p>
-                </div>
-                
-                <div class="contact-card">
-                    <h3>Address</h3>
-                    <p>71 Scotton Street<br>
-                    Ashford, Kent TN25 5BW<br>
-                    United Kingdom</p>
-                </div>
-            </div>
-
-            <h2>Get in Touch</h2>
-            <p>
-                We value communication with our users and the community. Whether you have questions 
-                about our apps, want to share feedback, report a bug, or just want to say hello, 
-                we'd love to hear from you.
-            </p>
-            <p>
-                For general inquiries, support requests, or feedback regarding our applications, 
-                please email us at <a href="mailto:hello@monkeyfuse.com" style="color: #667eea; font-weight: 600;">hello@monkeyfuse.com</a>. 
-                We typically respond within 24-48 hours during business days.
-            </p>
-            <h2>Business Hours</h2>
-            <p>
-                We operate from the United Kingdom and typically respond to inquiries during UK 
-                business hours (Monday to Friday, 9:00 AM to 5:00 PM GMT). While we aim to respond 
-                quickly, please allow up to 48 hours for a response, especially during busy periods.
-            </p>
-            <h2>Privacy and Data Requests</h2>
-            <p>
-                If you have questions about our privacy practices or wish to exercise your rights 
-                regarding your personal data (such as requesting access, correction, or deletion), 
-                please contact us at <a href="mailto:hello@monkeyfuse.com" style="color: #667eea; font-weight: 600;">hello@monkeyfuse.com</a>. 
-                You can also review our <a href="privacy.html" style="color: #667eea;">Privacy Policy</a> 
-                for detailed information about how we handle your data.
-            </p>
+            <hr class="hero__rule">
         </section>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+        <section class="band" aria-labelledby="details-title">
+            <div class="wrap split">
+                <div class="split__heading">
+                    <h2 id="details-title">Details</h2>
+                </div>
+                <div>
+                    <dl class="details">
+                        <div>
+                            <dt>Email</dt>
+                            <dd>
+                                <a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a><br>
+                                <span style="font-size: 0.9375rem; color: var(--ink-tertiary)">
+                                    We usually reply within 24–48 hours.
+                                </span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Post</dt>
+                            <dd>
+                                <address>
+                                    Monkeyfuse<br>
+                                    71 Scotton Street<br>
+                                    Ashford, Kent TN25 5BW<br>
+                                    United Kingdom
+                                </address>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Hours</dt>
+                            <dd>
+                                Monday to Friday<br>
+                                9:00–17:00 UK time
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; <span id="copyright-year"></span> Monkeyfuse. All rights reserved.</p>
+        </section>
+
+        <section class="band" aria-labelledby="support-title">
+            <div class="wrap split">
+                <div class="split__heading">
+                    <h2 id="support-title">Support &amp; feedback</h2>
+                </div>
+                <div class="prose">
+                    <p>
+                        For anything to do with our apps — a question, a bug, a feature you wish
+                        existed — email
+                        <a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a>.
+                        We aim to respond within 24–48 hours on working days, though it can take
+                        a little longer during busy periods.
+                    </p>
+                    <p>
+                        If you're reporting a bug, telling us which app and device you're using,
+                        and what you were doing at the time, helps us fix it far more quickly.
+                    </p>
+                </div>
             </div>
+        </section>
+
+        <section class="band" aria-labelledby="privacy-title">
+            <div class="wrap split">
+                <div class="split__heading">
+                    <h2 id="privacy-title">Privacy &amp; data requests</h2>
+                </div>
+                <div class="prose">
+                    <p>
+                        To ask about our privacy practices, or to exercise your rights over your
+                        personal data — access, correction, deletion or portability — email
+                        <a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a>.
+                        We respond to these requests within 30 days.
+                    </p>
+                    <p>
+                        Our <a href="/privacy.html">privacy policy</a> sets out in detail what we
+                        collect, why, and how long we keep it.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap site-footer__inner">
+            <p class="site-footer__legal">&copy; 2026 Monkeyfuse. All rights reserved.</p>
+            <nav aria-label="Footer">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
-    
-    <script>
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
