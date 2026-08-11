@@ -1,339 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service - Monkeyfuse">
-    <title>Terms of Service - Monkeyfuse</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 0;
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #667eea;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #667eea;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #555;
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .back-link {
-            margin-bottom: 30px;
-        }
-        
-        .back-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-        
-        .contact a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            margin-top: 60px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-copyright {
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .section {
-                padding: 40px 30px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            h2 {
-                font-size: 1.3em;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terms of Service — Monkeyfuse</title>
+    <meta name="description" content="The terms governing use of the Monkeyfuse website and applications. Governed by the laws of England and Wales.">
+    <link rel="canonical" href="https://monkeyfuse.com/terms.html">
+
+    <meta name="theme-color" content="#fcfcfd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1014" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Monkeyfuse">
+    <meta property="og:url" content="https://monkeyfuse.com/terms.html">
+    <meta property="og:title" content="Terms of Service — Monkeyfuse">
+    <meta property="og:description" content="The terms governing use of the Monkeyfuse website and applications.">
+    <meta property="og:image" content="https://monkeyfuse.com/assets/img/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Monkeyfuse</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap site-header__inner">
+            <a class="wordmark" href="/">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                    <rect width="32" height="32" rx="7" fill="#2b5ce6"/>
+                    <path d="M9 22.5V9.5l7 6.5 7-6.5v13" fill="none" stroke="#fff"
+                          stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Monkeyfuse
+            </a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/index.html#mastermeals">Work</a></li>
+                    <li><a href="/index.html#about">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <section class="section">
-            <div class="back-link">
-                <a href="index.html">← Back to Home</a>
-            </div>
-            
-            <h1>Terms of Service</h1>
-            <p><strong>Last updated:</strong> <span id="date"></span></p>
-            
-            <h2>1. Acceptance of Terms</h2>
-            <p>
-                By accessing and using the Monkeyfuse website and services, you accept and agree to be bound by 
-                the terms and provision of this agreement. If you do not agree to abide by the above, please do not 
-                use this service.
-            </p>
-            
-            <h2>2. Use License</h2>
-            <p>
-                Permission is granted to temporarily access the materials on Monkeyfuse's website for personal, 
-                non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, 
-                and under this license you may not:
-            </p>
-            <ul>
-                <li>modify or copy the materials;</li>
-                <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                <li>attempt to decompile or reverse engineer any software contained on Monkeyfuse's website;</li>
-                <li>remove any copyright or other proprietary notations from the materials; or</li>
-                <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
-            </ul>
-            
-            <h2>3. Products and Services</h2>
-            <p>
-                Monkeyfuse is a software house that develops and publishes its own mobile applications. 
-                Use of our applications is subject to the specific terms and conditions presented within 
-                each application, including any end-user license agreements (EULAs) and in-app terms.
-            </p>
-            
-            <h2>4. Disclaimer</h2>
-            <p>
-                The materials on Monkeyfuse's website are provided on an 'as is' basis. Monkeyfuse makes no warranties, 
-                expressed or implied, and hereby disclaims and negates all other warranties including without limitation, 
-                implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement 
-                of intellectual property or other violation of rights.
-            </p>
-            
-            <h2>5. Limitations</h2>
-            <p>
-                In no event shall Monkeyfuse or its suppliers be liable for any damages (including, without limitation, 
-                damages for loss of data or profit, or due to business interruption) arising out of the use or inability 
-                to use the materials on Monkeyfuse's website, even if Monkeyfuse or a Monkeyfuse authorized representative 
-                has been notified orally or in writing of the possibility of such damage.
-            </p>
-            
-            <h2>6. Accuracy of Materials</h2>
-            <p>
-                The materials appearing on Monkeyfuse's website could include technical, typographical, or photographic 
-                errors. Monkeyfuse does not warrant that any of the materials on its website are accurate, complete, 
-                or current. Monkeyfuse may make changes to the materials contained on its website at any time without notice.
-            </p>
-            
-            <h2>7. Links</h2>
-            <p>
-                Monkeyfuse has not reviewed all of the sites linked to its website and is not responsible for the contents 
-                of any such linked site. The inclusion of any link does not imply endorsement by Monkeyfuse of the site. 
-                Use of any such linked website is at the user's own risk.
-            </p>
-            
-            <h2>8. Modifications</h2>
-            <p>
-                Monkeyfuse may revise these terms of service for its website at any time without notice. By using this 
-                website you are agreeing to be bound by the then current version of these terms of service.
-            </p>
-            
-            <h2>9. Governing Law</h2>
-            <p>
-                These terms and conditions are governed by and construed in accordance with the laws of England and Wales. 
-                You irrevocably submit to the exclusive jurisdiction of the courts of England and Wales.
-            </p>
-            
-            <h2>10. Intellectual Property</h2>
-            <p>
-                All content, features, and functionality of the Monkeyfuse website, including but not limited to text, 
-                graphics, logos, and software, are the property of Monkeyfuse and are protected by international copyright, 
-                trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
-            </p>
-            
-            <h2>11. Contact Information</h2>
-            <div class="contact">
+    <main id="main">
+        <section class="wrap band band--flush band--tight">
+            <article class="doc">
+                <a class="back-link" href="/">&larr; Back to home</a>
+
+                <h1>Terms of Service</h1>
+                <p class="doc__meta">
+                    Last updated <time datetime="2026-01-18">18 January 2026</time>
+                </p>
+
+                <nav class="toc" aria-labelledby="toc-title">
+                    <h2 id="toc-title">Contents</h2>
+                    <ol>
+                        <li><a href="#acceptance">Acceptance of terms</a></li>
+                        <li><a href="#licence">Use licence</a></li>
+                        <li><a href="#products">Products and services</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                        <li><a href="#limitations">Limitations</a></li>
+                        <li><a href="#accuracy">Accuracy of materials</a></li>
+                        <li><a href="#links">Links</a></li>
+                        <li><a href="#modifications">Modifications</a></li>
+                        <li><a href="#law">Governing law</a></li>
+                        <li><a href="#ip">Intellectual property</a></li>
+                        <li><a href="#contact">Contact information</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="acceptance">1. Acceptance of terms</h2>
+                <p>
+                    By accessing and using the Monkeyfuse website and services, you accept and agree to be bound by
+                    the terms and provision of this agreement. If you do not agree to abide by the above, please do not
+                    use this service.
+                </p>
+
+                <h2 id="licence">2. Use licence</h2>
+                <p>
+                    Permission is granted to temporarily access the materials on Monkeyfuse's website for personal,
+                    non-commercial transitory viewing only. This is the grant of a license, not a transfer of title,
+                    and under this license you may not:
+                </p>
+                <ul>
+                    <li>modify or copy the materials;</li>
+                    <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                    <li>attempt to decompile or reverse engineer any software contained on Monkeyfuse's website;</li>
+                    <li>remove any copyright or other proprietary notations from the materials; or</li>
+                    <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                </ul>
+
+                <h2 id="products">3. Products and services</h2>
+                <p>
+                    Monkeyfuse is a software house that develops and publishes its own mobile applications.
+                    Use of our applications is subject to the specific terms and conditions presented within
+                    each application, including any end-user license agreements (EULAs) and in-app terms.
+                </p>
+
+                <h2 id="disclaimer">4. Disclaimer</h2>
+                <p>
+                    The materials on Monkeyfuse's website are provided on an 'as is' basis. Monkeyfuse makes no warranties,
+                    expressed or implied, and hereby disclaims and negates all other warranties including without limitation,
+                    implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement
+                    of intellectual property or other violation of rights.
+                </p>
+
+                <h2 id="limitations">5. Limitations</h2>
+                <p>
+                    In no event shall Monkeyfuse or its suppliers be liable for any damages (including, without limitation,
+                    damages for loss of data or profit, or due to business interruption) arising out of the use or inability
+                    to use the materials on Monkeyfuse's website, even if Monkeyfuse or a Monkeyfuse authorized representative
+                    has been notified orally or in writing of the possibility of such damage.
+                </p>
+                <p>
+                    Nothing in these terms excludes or limits our liability for death or personal injury caused by our
+                    negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be
+                    excluded or limited under the laws of England and Wales. Nothing in these terms affects your
+                    statutory rights as a consumer.
+                </p>
+
+                <h2 id="accuracy">6. Accuracy of materials</h2>
+                <p>
+                    The materials appearing on Monkeyfuse's website could include technical, typographical, or photographic
+                    errors. Monkeyfuse does not warrant that any of the materials on its website are accurate, complete,
+                    or current. Monkeyfuse may make changes to the materials contained on its website at any time without notice.
+                </p>
+
+                <h2 id="links">7. Links</h2>
+                <p>
+                    Monkeyfuse has not reviewed all of the sites linked to its website and is not responsible for the contents
+                    of any such linked site. The inclusion of any link does not imply endorsement by Monkeyfuse of the site.
+                    Use of any such linked website is at the user's own risk.
+                </p>
+
+                <h2 id="modifications">8. Modifications</h2>
+                <p>
+                    Monkeyfuse may revise these terms of service for its website at any time without notice. By using this
+                    website you are agreeing to be bound by the then current version of these terms of service.
+                </p>
+
+                <h2 id="law">9. Governing law</h2>
+                <p>
+                    These terms and conditions are governed by and construed in accordance with the laws of England and Wales.
+                    You irrevocably submit to the exclusive jurisdiction of the courts of England and Wales.
+                </p>
+
+                <h2 id="ip">10. Intellectual property</h2>
+                <p>
+                    All content, features, and functionality of the Monkeyfuse website, including but not limited to text,
+                    graphics, logos, and software, are the property of Monkeyfuse and are protected by international copyright,
+                    trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                </p>
+
+                <h2 id="contact">11. Contact information</h2>
                 <p>If you have any questions about these Terms of Service, please contact us:</p>
-                <p><strong>Email:</strong> <a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a></p>
-                <p><strong>Address:</strong><br>
-                Monkeyfuse<br>
-                71 Scotton Street<br>
-                Ashford, Kent TN25 5BW<br>
-                United Kingdom</p>
-            </div>
+                <dl class="details" style="margin-top: var(--space-5)">
+                    <div>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:hello@monkeyfuse.com">hello@monkeyfuse.com</a></dd>
+                    </div>
+                    <div>
+                        <dt>Post</dt>
+                        <dd>
+                            <address>
+                                Monkeyfuse<br>
+                                71 Scotton Street<br>
+                                Ashford, Kent TN25 5BW<br>
+                                United Kingdom
+                            </address>
+                        </dd>
+                    </div>
+                </dl>
+            </article>
         </section>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; <span id="copyright-year"></span> Monkeyfuse. All rights reserved.</p>
-            </div>
+    <footer class="site-footer">
+        <div class="wrap site-footer__inner">
+            <p class="site-footer__legal">&copy; 2026 Monkeyfuse. All rights reserved.</p>
+            <nav aria-label="Footer">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
-    
-    <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
