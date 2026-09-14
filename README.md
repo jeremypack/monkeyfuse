@@ -1,108 +1,90 @@
-# Monkeyfuse Website
+# monkeyfuse.com
 
-Simple holding page for monkeyfuse.com to meet Apple App Store requirements.
+The Monkeyfuse company website. Static HTML and one stylesheet, hosted on GitHub
+Pages at [monkeyfuse.com](https://monkeyfuse.com).
 
-## Setup Instructions
+No build step, no framework, no dependencies. No webfonts, analytics, or
+third-party scripts of any kind — which is both a performance decision and a
+consistency one, given what the privacy policy promises.
 
-### 1. Enable GitHub Pages
+## Structure
 
-1. Go to your repository settings on GitHub
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select the branch you want to deploy (usually `main` or `master`)
-4. Click "Save"
-
-### 2. Configure DNS for Custom Domain
-
-To use your custom domain `monkeyfuse.com` with GitHub Pages, configure your DNS records:
-
-#### Option A: Using CNAME (Recommended for www subdomain)
-
-Add a CNAME record:
-- **Type**: CNAME
-- **Name**: `www`
-- **Value**: `monkeyfuse.github.io`
-- **TTL**: 3600 (or default)
-
-#### Option B: Using A Records (For root domain)
-
-Add the following A records for the root domain (`monkeyfuse.com`):
-- **Type**: A
-- **Name**: `@` (or leave blank)
-- **Value**: `185.199.108.153`
-- **TTL**: 3600
-
-- **Type**: A
-- **Name**: `@` (or leave blank)
-- **Value**: `185.199.109.153`
-- **TTL**: 3600
-
-- **Type**: A
-- **Name**: `@` (or leave blank)
-- **Value**: `185.199.110.153`
-- **TTL**: 3600
-
-- **Type**: A
-- **Name**: `@` (or leave blank)
-- **Value**: `185.199.111.153`
-- **TTL**: 3600
-
-**Note**: GitHub Pages IP addresses may change. Check [GitHub's documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain) for current IP addresses.
-
-#### Option C: CNAME Flattening (If your DNS provider supports it)
-
-Some DNS providers (like Cloudflare) support CNAME flattening, which allows you to use a CNAME record for the root domain:
-- **Type**: CNAME
-- **Name**: `@` (or root domain)
-- **Value**: `monkeyfuse.github.io`
-
-### 3. Verify Domain in GitHub
-
-1. After configuring DNS, go back to your repository's Pages settings
-2. Under "Custom domain", enter `monkeyfuse.com`
-3. Check "Enforce HTTPS" (this will be available after DNS propagation)
-4. GitHub will automatically generate an SSL certificate
-
-### 4. Wait for DNS Propagation
-
-DNS changes can take anywhere from a few minutes to 48 hours to propagate. You can check propagation status using tools like:
-- [whatsmydns.net](https://www.whatsmydns.net/)
-- [dnschecker.org](https://dnschecker.org/)
-
-### 5. Verify Everything Works
-
-Once DNS has propagated:
-- Visit `http://monkeyfuse.com` - should redirect to HTTPS
-- Visit `https://monkeyfuse.com` - should show your site
-- Visit `https://www.monkeyfuse.com` - should also work (if configured)
-
-## Local Development
-
-To view the site locally, simply open `index.html` in your web browser, or use a local server:
-
-```bash
-# Using Python 3
-python3 -m http.server 8000
-
-# Using Node.js (if you have http-server installed)
-npx http-server
+```
+index.html           Home — company, MasterMeals, approach, contact
+contact.html         Contact details, support, data requests
+privacy.html         Privacy policy (required by the App Store)
+terms.html           Terms of service
+404.html             Not-found page (served automatically by GitHub Pages)
+robots.txt           Crawler policy
+sitemap.xml          Sitemap
+CNAME                Custom domain for GitHub Pages
+assets/css/site.css  All styles for every page
+assets/img/          Favicon, touch icon, social share image
 ```
 
-Then visit `http://localhost:8000`
+## Local development
 
-## Files
+The pages use root-relative paths (`/assets/...`), so opening `index.html`
+directly from the filesystem will not load the stylesheet. Serve the directory
+instead:
 
-- `index.html` - Main landing page
-- `privacy.html` - Privacy policy page (required by Apple)
-- `CNAME` - GitHub Pages custom domain configuration
-- `README.md` - This file
+```bash
+python3 -m http.server 8000
+```
 
-## Cost
+Then visit `http://localhost:8000`.
 
-- **Hosting**: $0/month (GitHub Pages free tier)
-- **Domain**: Already owned
-- **Total**: $0/month
+## Making changes
 
-## Support
+**Styles.** Everything lives in `assets/css/site.css`. Colours, spacing, and
+type sizes are CSS custom properties defined in the `:root` block at the top —
+change a token there and it updates across every page. Dark mode is handled by
+the `prefers-color-scheme` block immediately below it; if you add a colour, add
+its dark counterpart at the same time.
 
-For questions or issues, contact: contact@monkeyfuse.com
+**Page shell.** The header, footer, and `<head>` metadata are duplicated in each
+HTML file, since there is no template step. If you change navigation links or
+metadata, change them in all five pages. Each page sets `aria-current="page"` on
+its own nav item.
 
+**Legal pages.** The "Last updated" dates in `privacy.html` and `terms.html` are
+hardcoded in a `<time>` element. Update them by hand when the policy actually
+changes — they must not be generated from the current date, or the pages would
+claim to have been revised every time someone loads them.
+
+**Social share image.** `assets/img/og.png` is a 1200×630 PNG referenced by the
+`og:image` tags. Its source is `assets/img/og-source.html`. To regenerate after
+editing that file:
+
+```bash
+cd assets/img && "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --hide-scrollbars --screenshot=og.png --window-size=1200,630 "file://$PWD/og-source.html"
+```
+
+## Deployment
+
+Pushing to `main` publishes the site. GitHub Pages serves from the repository
+root; `CNAME` pins the custom domain and must not be deleted.
+
+## DNS
+
+The apex domain points at GitHub Pages via A records:
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+Optionally, a `CNAME` record for `www` pointing at `monkeyfuse.github.io`.
+Providers that support CNAME flattening (Cloudflare, for example) can use a
+CNAME at the apex instead of the A records.
+
+These addresses change occasionally — check
+[GitHub's apex domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)
+before troubleshooting. In repository **Settings → Pages**, the custom domain
+should be `monkeyfuse.com` with **Enforce HTTPS** enabled.
+
+## Contact
+
+hello@monkeyfuse.com
